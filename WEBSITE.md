@@ -13,3 +13,5 @@ Daily import accepts complete SolarEdge power CSV, 96 unique quarter-hour sample
 To update the public September dataset, replace matching files under raw/Solar (3MW-prefixed daily files), run `python analyze.py` then `python redesign_dashboard.py`, and commit raw files, data and index.html to main. Requires Python and pandas. analyze.py currently validates the September 2026 period; a different month needs the corresponding monthly reports and a period configuration change. Uploading raw CSV alone does not update the published dashboard.
 
 The light future theme uses locally served IBM Plex Sans Thai Regular and SemiBold, with its SIL Open Font License included in assets/fonts. No font CDN is required.
+
+Daily energy totals use segmented capsule bars with exact-value tooltips. Daily power-flow plots remain stacked areas. The inverter section uses two-unit monthly comparison cards, a daily comparison table and a selectable fleet list, without inverter charts. Percentage differences use unit B as the baseline; a zero baseline displays no percentage.
