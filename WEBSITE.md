@@ -15,3 +15,5 @@ To update the public September dataset, replace matching files under raw/Solar (
 The light future theme uses locally served IBM Plex Sans Thai Regular and SemiBold, with its SIL Open Font License included in assets/fonts. No font CDN is required.
 
 Daily energy totals use segmented capsule bars with exact-value tooltips. Daily power-flow plots remain stacked areas. The inverter section uses two-unit monthly comparison cards, a daily comparison table and a selectable fleet list, without inverter charts. Percentage differences use unit B as the baseline; a zero baseline displays no percentage.
+
+Navigation uses short nonblocking transitions, an animated active indicator, browser history and section deep links (#overview, #daily, #inverters, #insights, #data, #compare). Scroll positions are retained per section during the session. Reduced-motion preferences disable the animations.

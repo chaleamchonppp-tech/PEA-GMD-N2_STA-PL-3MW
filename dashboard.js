@@ -73,5 +73,33 @@ render=function(){
  $('heading').closest('.title').hidden=tab===0;
  bindCharts();
 };
+/* Navigation updates synchronously; motion never blocks input. */
+const sectionHashes={0:'overview',1:'daily',3:'inverters',4:'insights',5:'data',6:'compare'};
+history.scrollRestoration='manual';
+const savedScroll=new Map();let displayedTab=null,restoringHistory=false,navPosition=null;
+const paintPage=render;
+render=function(){
+ const changed=displayedTab!==null&&displayedTab!==tab,nav=$('nav'),navScroll=nav.scrollLeft,keyboardNav=nav.contains(document.activeElement);
+ if(changed)savedScroll.set(displayedTab,scrollY);
+ paintPage();nav.scrollLeft=navScroll;
+ const active=nav.querySelector('[aria-current="page"]');
+ if(active){
+  const target={left:active.offsetLeft,width:active.offsetWidth},indicator=document.createElement('span');indicator.className='nav-indicator';indicator.setAttribute('aria-hidden','true');indicator.style.left=target.left+'px';indicator.style.width=target.width+'px';nav.append(indicator);
+  if(navPosition&&changed&&!matchMedia('(prefers-reduced-motion: reduce)').matches)indicator.animate([{left:navPosition.left+'px',width:navPosition.width+'px'},{left:target.left+'px',width:target.width+'px'}],{duration:280,easing:'cubic-bezier(.2,.8,.2,1)'});
+  navPosition=target;if(keyboardNav)active.focus({preventScroll:true});
+  if(changed&&innerWidth<=800){const destination=Math.max(0,active.offsetLeft-(nav.clientWidth-active.offsetWidth)/2);nav.scrollTo({left:destination,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
+ }
+ if(changed){
+  const view=$('view');view.getAnimations().forEach(a=>a.cancel());
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)view.animate([{opacity:.35,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'cubic-bezier(.2,.8,.2,1)'});
+  scrollTo({top:savedScroll.get(tab)||0,behavior:'instant'});
+  if(!restoringHistory)history.pushState({section:tab},'', '#'+(sectionHashes[tab]||'overview'));
+ }
+ displayedTab=tab;
+ const subtitle=$('subtitle');subtitle.textContent=t('September 2026 · Verified source data','กันยายน 2569 · ข้อมูลจากรายงานต้นฉบับ');
+};
+function pageFromHash(){return Number(Object.keys(sectionHashes).find(key=>sectionHashes[key]===location.hash.slice(1))||0)}
+if(location.hash)tab=pageFromHash();
+addEventListener('popstate',()=>{restoringHistory=true;tab=pageFromHash();page=0;render();restoringHistory=false});
 render();
 let resizeTimer,lastWidth=innerWidth;addEventListener('resize',()=>{if(innerWidth===lastWidth)return;lastWidth=innerWidth;clearTimeout(resizeTimer);resizeTimer=setTimeout(render,150)});
