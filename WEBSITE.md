@@ -2,6 +2,10 @@
 
 Live: https://chaleamchonppp-tech.github.io/PEA-GMD-N2_STA-PL-3MW/
 
+The modern dashboard uses `dashboard.css` and `dashboard.js` alongside the generated `index.html`. Keep these files and `assets/fonts` when publishing. Run `python redesign_dashboard.py` to regenerate the page; this preserves the modern presentation. The interface defaults to Thai and remembers the visitor's language choice.
+
+The factory drawing illustrates energy connections, not live telemetry. The overview and energy rings use the September 2026 meter-report totals; hourly charts remain estimates from four quarter-hour samples. PEA purple (#74045F), gold (#C7911B), and white follow the supplied identity book. Logos retain their original proportions on white backgrounds.
+
 GitHub Pages: main branch, root. English default; Thai language switch. Fixed viewport and paginated tables. Latest data means the latest measurement, not deployment time.
 
 Daily import accepts complete SolarEdge power CSV, 96 unique quarter-hour samples per day with kW/MW headers. Imports replace matching hourly dates in local browser storage only. Download the updated hourly CSV from Files & updates. Monthly energy totals remain from the source monthly report.
