@@ -1,12 +1,9 @@
-# GitHub Pages — STA PL 3MW
+# STA PL 3MW dashboard
 
-ใช้ repository นี้สำหรับเว็บไซต์โดยตรง:
+Live: https://chaleamchonppp-tech.github.io/PEA-GMD-N2_STA-PL-3MW/
 
-1. Settings → Pages
-2. Source: Deploy from a branch
-3. Branch: main, Folder: / (root)
-4. Save
+GitHub Pages: main branch, root. English default; Thai language switch. Fixed viewport and paginated tables. Latest data means the latest measurement, not deployment time.
 
-หน้าเว็บเริ่มต้นคือ index.html ข้อมูลและ assets ใช้ relative paths รองรับ project URL ของ GitHub Pages
+Daily import accepts complete SolarEdge power CSV, 96 unique quarter-hour samples per day with kW/MW headers. Imports replace matching hourly dates in local browser storage only. Download the updated hourly CSV from Files & updates. Monthly energy totals remain from the source monthly report.
 
-เว็บไซต์แสดงข้อมูลกันยายน 2569 ที่อัปโหลด ไม่ได้เชื่อม API สด
+To update the public September dataset, replace matching files under raw/Solar (3MW-prefixed daily files), run `python analyze.py` then `python redesign_dashboard.py`, and commit raw files, data and index.html to main. Requires Python and pandas. analyze.py currently validates the September 2026 period; a different month needs the corresponding monthly reports and a period configuration change. Uploading raw CSV alone does not update the published dashboard.
