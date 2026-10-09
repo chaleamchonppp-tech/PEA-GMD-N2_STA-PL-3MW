@@ -1,0 +1,20 @@
+{
+  "Consumed Energy_kWh": 914298.9990000001,
+  "Exported Energy_kWh": 728.419,
+  "Imported Energy_kWh": 641593.34,
+  "Inverters Produced_kWh": 273434.082,
+  "self_consumed_solar_kWh": 272705.663,
+  "Production_estimated_kWh": 265115.5925,
+  "To Building_estimated_kWh": 264380.5925,
+  "To Grid_estimated_kWh": 735.0,
+  "Consumption_estimated_kWh": 907965.5925,
+  "From Solar_estimated_kWh": 264380.5925,
+  "From Grid_estimated_kWh": 643485.0,
+  "self_consumption_pct": 99.73360343572679,
+  "solar_share_pct": 29.826748503308814,
+  "files": 49,
+  "quarter_hour_rows": 2880,
+  "hourly_rows": 720,
+  "daily_rows": 30,
+  "monthly_inverter_sum_kWh": 273456.34400000004
+}

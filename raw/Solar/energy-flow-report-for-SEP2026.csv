@@ -1,0 +1,9 @@
+﻿"Category"," (from)"," (to)"," (weight)"
+"highcharts-n0kdub2-3540","PV Production","Building Consumption",272705663
+"highcharts-n0kdub2-3541","PV Production","Grid Export",728419
+"highcharts-n0kdub2-3542","PV Production","Storage Charge",0
+"highcharts-n0kdub2-3543","PV Production","EV Charge",
+"highcharts-n0kdub2-3544","Grid Import","Building Consumption",641593340
+"highcharts-n0kdub2-3545","Grid Import","Storage Charge",0
+"highcharts-n0kdub2-3546","Storage Discharge","Building Consumption",0
+"highcharts-n0kdub2-3547","Storage Discharge","Grid Export",0
