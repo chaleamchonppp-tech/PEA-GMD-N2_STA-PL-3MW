@@ -42,6 +42,13 @@
 
 เปิด index.html ได้โดยตรง ไม่ต้องติดตั้ง ไม่ใช้ API และไม่เก็บข้อมูลล็อกอิน ดาวน์โหลด CSV ได้จากโฟลเดอร์ data และเปิดต้นฉบับจาก raw/Solar
 
-คำนวณใหม่: `python analyze.py` (ต้องมี pandas) หลังคำนวณใหม่ให้สร้าง index.html ใหม่ด้วย `python build_dashboard.py`
+คำนวณใหม่: `python analyze.py` (ต้องมี pandas) หลังคำนวณใหม่ให้สร้าง index.html ใหม่ด้วย `python build_dashboard.py` ตามด้วย `python brand_dashboard.py`
 
 Repository: chaleamchonppp-tech/PEA-GMD-N2_STA-PL-3MW (Public ตามคำสั่งผู้ใช้)
+
+
+## GitHub Pages
+
+Settings → Pages → Deploy from a branch → main → / (root) → Save. เว็บรองรับ project path และไม่ใช้ GPT Site ในเส้นทางเผยแพร่นี้
+
+PEA emblem จากแผ่นเทียบสีและการใช้ตราสัญลักษณ์.pdf; Sri Trang Group จากสื่อใน PM2026.rar. ใช้สี PEA ตาม Corporate Identity Book: #74045F, #C7911B, #FFFFFF
