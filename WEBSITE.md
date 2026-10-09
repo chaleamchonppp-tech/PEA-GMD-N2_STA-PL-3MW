@@ -4,7 +4,7 @@ Live: https://chaleamchonppp-tech.github.io/PEA-GMD-N2_STA-PL-3MW/
 
 The modern dashboard uses `dashboard.css` and `dashboard.js` alongside the generated `index.html`. Keep these files and `assets/fonts` when publishing. Run `python redesign_dashboard.py` to regenerate the page; this preserves the modern presentation. The interface defaults to Thai and remembers the visitor's language choice.
 
-The factory drawing illustrates energy connections, not live telemetry. The overview and energy rings use the September 2026 meter-report totals; hourly charts remain estimates from four quarter-hour samples. PEA purple (#74045F), gold (#C7911B), and white follow the supplied identity book. Logos retain their original proportions on white backgrounds.
+The white-and-purple interface has five main sections: overview, daily energy, inverters, insights, and data updates. Solar Farm, factory load, and grid connections are shown as clear labeled nodes, not a building illustration. Graphs provide pointer, touch, and keyboard value inspection. The daily power-flow chart stacks solar supply/export above zero and solar/grid consumption below zero; the negative sign is a display convention, not a negative meter reading. Detailed tables are available in expandable sections. The overview and energy rings use the September 2026 meter-report totals; hourly charts remain estimates from four quarter-hour samples. PEA purple (#74045F), gold (#C7911B), and white follow the supplied identity book. Logos retain their original proportions on white backgrounds.
 
 GitHub Pages: main branch, root. English default; Thai language switch. Fixed viewport and paginated tables. Latest data means the latest measurement, not deployment time.
 
