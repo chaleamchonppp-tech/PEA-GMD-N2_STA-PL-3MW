@@ -114,6 +114,7 @@ render=function(){
   if(!restoringHistory)history.pushState({section:tab},'', '#'+(sectionHashes[tab]||'overview'));
  }
  displayedTab=tab;
+ if(tab===0){const overviewChart=$('view').querySelector('.overview-grid .trend-chart');if(overviewChart)overviewChart.setAttribute('preserveAspectRatio','none')}
  $('subtitle').hidden=true;
  $('view').querySelectorAll('p').forEach(p=>{if(!p.textContent.trim())p.remove()});
  $('view').querySelectorAll('.chart-help').forEach((p,i)=>{p.hidden=i>0});
