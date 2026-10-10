@@ -46,3 +46,66 @@ main{padding-top:20px}.view.active{gap:18px}.volta-hero{min-height:0;padding:18p
  #view>.panel:has(>.chart-wrap) .trend-chart{height:300px;max-height:300px;aspect-ratio:auto!important}
 }
 @media(min-width:801px) and (max-width:1100px){main{padding-inline:24px}.site-summary{width:360px}.volta-hero p{display:block;margin-bottom:5px}.energy-charts{grid-template-columns:1fr}.energy-charts .power-chart{height:300px;aspect-ratio:auto!important}.balance-content{gap:10px}.overview-grid .balance-grid{gap:18px}.overview-grid .balance-card+ .balance-card{padding-left:18px}}
+
+/* Balanced overview workspace: fit desktop viewport and give rings room. */
+@media(min-width:1001px) and (min-height:650px){
+ body:has(.balance-panel){height:100dvh;min-height:0;overflow:hidden}
+ body:has(.balance-panel) header{height:80px;min-height:80px;padding:8px 28px}
+ body:has(.balance-panel) .brand img{height:56px}
+ body:has(.balance-panel) aside{height:52px;position:static;padding-inline:28px}
+ body:has(.balance-panel) aside button{padding-block:10px}
+ body:has(.balance-panel) .layout{height:calc(100dvh - 80px);min-height:0;display:flex;flex-direction:column}
+ body:has(.balance-panel) main{width:100%;max-width:1800px;flex:1;min-height:0;padding:16px 28px;overflow:hidden}
+ body:has(.balance-panel) #view{flex:1;min-height:0;gap:14px}
+ body:has(.balance-panel) .volta-hero{flex:none;padding:12px 22px}
+ body:has(.balance-panel) .site-summary{padding:8px 16px}
+ body:has(.balance-panel) .cards{flex:none}
+ body:has(.balance-panel) .card{padding:12px 18px}
+ .overview-grid{flex:1;min-height:0;grid-template-columns:minmax(0,1.55fr) minmax(390px,1fr);align-items:stretch;gap:16px}
+ .overview-grid>.panel{min-height:0;padding:18px 20px;display:flex;flex-direction:column}
+ .overview-grid>.balance-panel{grid-row:auto}
+ .overview-grid .section-heading{flex:none;align-items:center}
+ .overview-grid .chart-wrap{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:4px}
+ .overview-grid .legend,.overview-grid .chart-help{flex:none}
+ .overview-grid .trend-chart{flex:1;width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto!important}
+ .balance-panel>h2{font-size:20px;margin-bottom:14px}
+ .overview-grid .balance-grid{flex:1;min-height:0;grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:12px}
+ .overview-grid .balance-card{display:flex;flex-direction:column;justify-content:center;min-height:0;padding:0}
+ .overview-grid .balance-card+.balance-card{border-left:0;border-top:1px solid #e3d8ea;padding:12px 0 0}
+ .balance-card h3,.overview-grid .balance-card h3{font-size:18px;margin:0 0 8px}
+ .balance-content{gap:20px}
+ .overview-grid .donut,.overview-grid .donut svg{width:clamp(120px,16vh,176px);height:clamp(120px,16vh,176px)}
+ .overview-grid .donut-value b{font-size:clamp(27px,3.4vh,36px);letter-spacing:-.7px}
+ .overview-grid .donut-value b>span{font-size:16px}
+ .balance-card .balance-amount{font-size:28px}
+ .balance-card .balance-copy p{font-size:14px;margin:4px 0 8px}
+ .balance-secondary{padding-top:8px}
+ .balance-secondary>b{font-size:17px}
+}
+@media(min-width:1001px) and (min-height:650px) and (max-height:760px){
+ body:has(.balance-panel) main{padding-block:12px}
+ body:has(.balance-panel) #view{gap:10px}
+ body:has(.balance-panel) .volta-hero{padding-block:8px}
+ body:has(.balance-panel) .card{padding-block:8px}
+ body:has(.balance-panel) .card b{font-size:30px}
+ .overview-grid>.panel{padding:14px 18px}
+ .overview-grid .donut,.overview-grid .donut svg{width:112px;height:112px}
+ .balance-card h3,.overview-grid .balance-card h3{font-size:16px;margin-bottom:5px}
+ .balance-card .balance-amount{font-size:25px}
+}
+@media(min-width:801px) and (max-width:1000px){
+ .overview-grid .donut,.overview-grid .donut svg{width:140px;height:140px}
+ .overview-grid .donut-value b{font-size:29px}
+ .overview-grid .balance-grid{grid-template-columns:1fr}
+ .overview-grid .balance-card+.balance-card{border-left:0;border-top:1px solid #e3d8ea;padding:16px 0 0}
+}
+@media(max-width:800px){
+ .overview-grid .donut,.overview-grid .donut svg{width:136px;height:136px}
+ .overview-grid .donut-value b{font-size:29px}
+ .balance-content{gap:18px}
+}
+@media(max-width:400px){
+ .overview-grid .donut,.overview-grid .donut svg{width:116px;height:116px}
+ .overview-grid .donut-value b{font-size:25px}
+ .balance-content{gap:12px}
+}
